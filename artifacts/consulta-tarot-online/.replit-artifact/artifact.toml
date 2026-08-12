@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Consulta de Tarot Online"
+description = "Landing page acolhedora e envolvente para agendamento de consultas de tarot online, com destaque para a imagem enviada, chamada para ação via WhatsApp e links sociais."
+version = "1.0.0"
+id = "artifacts/consulta-tarot-online"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22720
+
+[services.development]
+run = "pnpm --filter @workspace/consulta-tarot-online run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/consulta-tarot-online", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/consulta-tarot-online/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22720"
+BASE_PATH = "/"
