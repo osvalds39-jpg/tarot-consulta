@@ -162,10 +162,11 @@ O projeto já possui configurações de deploy para as 3 plataformas. Basta impo
 ### Cloudflare Pages
 
 - Importar o repositório em **dash.cloudflare.com > Workers & Pages > Create**
-- O `wrangler.toml` define project name e site bucket
 - Configurar no dashboard:
+  - **Framework preset:** Nenhum
   - **Build command:** `pnpm build:frontend`
   - **Build output directory:** `artifacts/consulta-tarot-online/dist/public`
+- O `wrangler.toml` só é usado para deploy manual via CLI (`wrangler pages deploy`)
 
 ---
 
