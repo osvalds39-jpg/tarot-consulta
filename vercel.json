@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd artifacts/consulta-tarot-online && pnpm build",
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm --filter @workspace/consulta-tarot-online build",
   "outputDirectory": "artifacts/consulta-tarot-online/dist/public",
   "framework": null,
-  "installCommand": "pnpm install",
   "rewrites": [{ "source": "/((?!assets/).*)", "destination": "/index.html" }]
 }
